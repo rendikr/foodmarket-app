@@ -13,8 +13,8 @@ class CreateFoodTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('foods')) {
-            Schema::create('foods', function (Blueprint $table) {
+        if (!Schema::hasTable('food')) {
+            Schema::create('food', function (Blueprint $table) {
                 $table->id();
 
                 $table->string('name');
@@ -38,6 +38,6 @@ class CreateFoodTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('foods');
+        Schema::dropIfExists('food');
     }
 }
