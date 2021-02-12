@@ -13,6 +13,7 @@ class FoodController extends Controller
     {
         $id    = $request->input('id');
         $limit = $request->input('limit', 10);
+
         $name  = $request->input('name');
         $types = $request->input('types');
 
@@ -67,7 +68,7 @@ class FoodController extends Controller
 
         return ResponseFormatter::success(
             $food->paginate($limit),
-            'Product data fetch'
+            'Product data fetch success'
         );
     }
 }
