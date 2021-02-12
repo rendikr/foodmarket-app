@@ -49,4 +49,13 @@ class TransactionController extends Controller
             'Transaction data fetch success'
         );
     }
+
+    public function update(Request $request, $id)
+    {
+        $transaction = Transaction::findOrFail($id);
+
+        $transaction->update($request->all());
+
+        return ResponseFormatter::success($transaction, 'Transaction data update success');
+    }
 }
