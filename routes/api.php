@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\FoodController;
+use App\Http\Controllers\API\MidtransController;
 use App\Http\Controllers\API\TransactionController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Support\Facades\Route;
@@ -33,3 +34,5 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 Route::get('food', [FoodController::class, 'all']);
+
+Route::get('midtrans/callback', [MidtransController::class, 'callback']);
