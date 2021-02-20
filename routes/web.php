@@ -30,6 +30,7 @@ Route::prefix('dashboard')->middleware(['auth:sanctum', 'admin'])->group(functio
     Route::resource('users', UserController::class);
     Route::resource('food', FoodController::class);
     Route::resource('transactions', TransactionController::class);
+    Route::get('transactions/{id}/status/{status}', [TransactionController::class, 'changeStatus'])->name('transactions.changeStatus');
 });
 
 // midtrans
